@@ -31,3 +31,7 @@ The program performs four tasks:
     cd dotdotdot
 
     ruby dotdotdot.rb
+    
+### Changelog
+
+1.0 [09 November 2012] Basic release without much documentation.
