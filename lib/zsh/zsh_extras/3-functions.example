@@ -1,0 +1,8 @@
+# Put function in here
+
+# e.g.
+
+# function getpic() {
+#     number=$1
+#     s3cmd get --force s3://example-bucket/photos/${number}/${number}.jpg $HOME/Pictures/from_s3/${number}.jpg
+# }
