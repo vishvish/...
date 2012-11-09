@@ -1,0 +1,13 @@
+ZSH=$HOME/.oh-my-zsh
+EXTRAS=$HOME/.zsh_extras
+ZSH_THEME="dallas"
+CASE_SENSITIVE="true"
+
+plugins=(rails git textmate ruby git-flow mvn osx rails3 rvm ssh-agent)
+
+source $ZSH/oh-my-zsh.sh
+
+source $EXTRAS/1-aliases
+source $EXTRAS/2-exports
+source $EXTRAS/3-functions
+source $EXTRAS/4-boot

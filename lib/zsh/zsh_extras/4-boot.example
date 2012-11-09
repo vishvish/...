@@ -1,0 +1,9 @@
+# Put things in here to run when the shell loads
+
+# e.g.
+
+# load RVM
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# display amusing and witty saying
+#fortune
