@@ -1,0 +1,11 @@
+keep_backups: 5
+
+dotfiles:
+    bin: true
+    vim: true
+    ssh: true
+    git: true
+    zsh/zshrc: true
+    zsh/zsh_extras: true
+    oh-my-zsh: true
+    tmux.conf: true
