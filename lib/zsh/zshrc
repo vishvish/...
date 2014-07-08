@@ -1,0 +1,19 @@
+ZSH=$HOME/.oh-my-zsh
+EXTRAS=$HOME/.zsh_extras
+
+ZSH_THEME="bira"
+CASE_SENSITIVE="true"
+
+plugins=(bundler gem gpg-agent rails tmux ssh-agent last-working-dir)
+
+source $EXTRAS/1-aliases.sh
+source $EXTRAS/2-exports.sh
+source $EXTRAS/3-functions.sh
+source $EXTRAS/4-boot.sh
+source $ZSH/oh-my-zsh.sh
+
+unsetopt CORRECT_ALL
+
+COMPLETION_WAITING_DOTS="true"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

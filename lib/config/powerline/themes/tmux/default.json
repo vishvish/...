@@ -1,0 +1,43 @@
+{
+  "default_module": "powerline.segments.common",
+  "segment_data": {
+    "uptime": {
+      "before": "⇑  "
+    }
+  },
+  "segments": {
+    "left": [
+      {
+        "name": "hostname"
+      }
+    ],
+    "right": [
+      {
+        "name": "external_ip"
+      },
+      {
+        "name": "battery",
+        "args": {
+          "gamify": true
+        }
+      },
+      {
+        "name": "system_load",
+        "priority": 50
+      },
+      {
+        "name": "date",
+        "args": {
+          "format": "%d %B"
+        }
+      },
+      {
+        "name": "date",
+        "args": {
+          "format": "%R",
+          "istime": true
+        }
+      }
+    ]
+  }
+}

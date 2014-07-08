@@ -1,0 +1,153 @@
+execute pathogen#infect()
+
+set nocompatible
+set t_Co=256
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+set autoindent
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Strip trailing whitespace from lines on save. Very nice.
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+set ruler
+set cmdheight=2
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l,[,]
+set lazyredraw
+set magic
+set showmatch
+set number
+set colorcolumn=80
+
+syntax enable
+
+set background=dark
+colorscheme hobbes
+
+set encoding=utf8
+set ffs=unix,dos,mac
+
+set nobackup
+set noswapfile
+
+set expandtab
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set clipboard=unnamed
+set showcmd
+set laststatus=2
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" shortcut to execute ruby in current buffer
+map <leader>r :!ruby %<cr>
+
+" Enable mouse for all modes
+set mouse=a
+
+" Use mouse in iTerm2 for OS X
+set ttymouse=xterm2
+
+" turn on syntax highlighting
+syntax on
+
+" add Go lang highlighting
+set rtp+=$GOROOT/misc/vim
+
+" disable folding
+set nofoldenable
+
+" stop vim-json hiding quotes
+let g:vim_json_syntax_conceal = 0
+
+" Essential Bundle initialization hooks
+let g:neocomplete#enable_at_startup = 1
+
+au FileType javascript set dictionary+=$HOME/.vim/dict/vim-node.dict
+au BufNewFile,BufRead *.fbp set filetype=coffee
+au BufNewFile,BufRead powerline.conf set filetype=tmux
+au BufNewFile,BufRead *.proxy set filetype=ruby
+
+" Remap some keys for the Bundles
+nnoremap <F1> :NERDTreeToggle<cr> 
+nnoremap <F2> :UndotreeToggle<cr>
+
+" Re-idents entire file
+nnoremap <F7> mzgg=G`z
+
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
+nnoremap <c-n> :SidewaysJumpLeft<cr>
+nnoremap <c-m> :SidewaysJumpRight<cr>
+
+" ColorStepper Keys
+nmap <F5> <Plug>ColorstepPrev
+nmap <F6> <Plug>ColorstepNext
+"nmap <S-F6> <Plug>ColorstepReload
+
+":nmap \l :setlocal number!
+:nmap <F4> :set paste!<cr>
+
+":nmap j gj
+":nmap k gk
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+:command QA qa
+:command Qa qa
+
+":set incsearch
+":set ignorecase
+":set smartcase
+":set hlsearch
+":nmap \q :nohlsearch
+
+:nmap <C-e> :e#
+:nmap <C-n> :bnext<cr>
+:nmap <C-p> :bprev<cr>
+":nnoremap <F5> :buffers<CR>:buffer<Space>
+
+:set wildignore+=*.o,*.obj,.git,vendor/**
+
+" Some shortcuts
+
+"iab #i #include (typing "#i" and space will be expanded to "#include")
+"iab #d #define (typing "#d" and space will be expanded to "#define")
+"iab s struct (typing "s" and space will be expanded to "struct")
+"iab t typedef ( typing "t" and space will be expanded to "typedef")
+iab bdp binding.pry
+iab cll console.log(
+
+source /Users/vish/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+
+set laststatus=2
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+

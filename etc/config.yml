@@ -1,0 +1,27 @@
+keep_backups: 5
+
+dotfiles:
+    files/gemrc: true
+    files/gitconfig: true
+    files/gitmessage.txt: true
+    files/powconfig: true
+    files/rspec: true
+    files/rubocop.yml: true
+    files/s3cfg: true
+    files/sbtconfig: true
+    files/vimrc: true
+    bin: true
+    config: true
+    gnupg: true
+    ssh: true
+    tmux/tmux-powerline: false
+    tmux/tmux-powerlinerc: false
+    tmux/powerline.conf: true
+    tmux/tmux.conf: true
+    vim: true
+    zsh/oh-my-zsh: true
+    zsh/zprofile: true
+    zsh/zshenv: true
+    zsh/zshrc: true
+    zsh/zsh_extras: true
+    zsh/LS_COLORS: true
