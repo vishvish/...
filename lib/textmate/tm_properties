@@ -1,0 +1,32 @@
+# Settings
+theme                       = "F96223EB-1A60-4617-92F3-D24D4F13DB09"
+fontName                    = "Menlo"
+fontSize                    = 11
+fileBrowserGlob             = "{*,.tm_properties,.htaccess}"
+            
+# Variables             
+PATH                        = "$PATH:$HOME/git/homebrew/bin"
+TM_GIT                      = "$HOME/git/homebrew/bin/git"
+TM_ORGANIZATION_NAME        = "Impartial Media"
+
+softWrap                    = true
+tabSize                     = 4
+softTabs                    = true
+
+[ attr.untitled ]
+fileType                    = 'text.plain'
+
+# Extra files to include
+#
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore"
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include = "{$include,$myExtraIncludes}"
+
+# Hide log, vendor and tmp directories from search popups.
+#
+myExtraExcludes = "log,vendor,tmp"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType         = "text.plain"
