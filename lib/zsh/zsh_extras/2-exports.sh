@@ -1,14 +1,23 @@
+# The BASICS
+export TERM="xterm-256color"
 export PATH=/usr/local/bin:~/git/homebrew/bin:~/git/homebrew/sbin:~/git/homebrew/share/npm/bin:$PATH
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+
+# Use Clang as default compiler
+export CC=clang
+export CFLAGS=-Qunused arguments
+export CPPFLAGS=-Qunused-arguments
 
 # hack to shut homebrew up
 export PATH=~/git/homebrew/bin:$PATH
 
-# Stop Boxen installing broken builds
+# If stupid enough to ever use Boxen again, stop Boxen installing broken builds
+# on my machine
 export HOMEBREW_BUILD_FROM_SOURCE=1
 export RUBY_BUILD_SKIP_MIRROR=1
 
 # To use Homebrew's directories rather than ~/.rbenv
-export RBENV_ROOT=/Users/vish/git/homebrew/var/rbenv
+# export RBENV_ROOT=/Users/vish/git/homebrew/var/rbenv
 export TMPDIR=${HOME}/git/tmp
 
 #Add texlive
@@ -35,11 +44,6 @@ export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512M"
 export HOMEBREW_PREFIX=~/git/homebrew
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# Use Clang as default compiler
-export CC=clang
-export CFLAGS=-Qunused arguments
-export CPPFLAGS=-Qunused-arguments
 
 # Set home page for Lynx
 export WWW_HOME=http://www.google.com/
@@ -74,17 +78,19 @@ export PATH=${HOME}/Library/Python/2.7/bin:${PATH}
 # jRebel for Scala
 export SCALATRA_JREBEL=~/git/utils/jrebel/jrebel.jar
 
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
 # Anything else JVM-related
+# Java 1.7 Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0.jdk/Contents/Home
+
+# Java 1.8 Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+
+# Maven
 # export M2_HOME=${HOME}/git/homebrew/Cellar/maven/3.1.1/libexec
 # export PATH=$PATH:$M2_HOME/bin
 
 # Postgres.app
 PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
-
-export TERM="xterm-256color"
 
 # prevent NVM losing installs on upgrade
 export NVM_DIR=~/.nvm
