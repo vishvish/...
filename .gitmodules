@@ -58,3 +58,6 @@
 [submodule "lib/dircolors-solarized"]
 	path = lib/dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "lib/vim/all-bundles/vim-tabber"]
+	path = lib/vim/all-bundles/vim-tabber
+	url = git@github.com:fweep/vim-tabber.git
