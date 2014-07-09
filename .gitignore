@@ -8,3 +8,9 @@ vendor/gems
 vendor/extensions
 vendor/specifications
 vendor/build_info
+
+/lib/ssh/authorized_keys
+
+/lib/ssh/known_hosts
+
+environment-*

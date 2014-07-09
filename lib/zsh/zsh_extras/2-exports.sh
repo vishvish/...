@@ -100,3 +100,7 @@ export TEAMCITY_SERVER_MEM_OPTS="-Xmx750m -XX:MaxPermSize=270m -XX:MaxPermSize=6
 
 # Docker options
 export DOCKER_HOST=localhost
+
+# GNU coreutils
+PATH="/Users/vish/git/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/Users/vish/git/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"

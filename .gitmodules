@@ -52,3 +52,9 @@
 [submodule "lib/zsh/LS_COLORS"]
 	path = lib/zsh/LS_COLORS
 	url = git@github.com:trapd00r/LS_COLORS.git
+[submodule "lib/tmux/tmux-powerline"]
+	path = lib/tmux/tmux-powerline
+	url = git@github.com:erikw/tmux-powerline.git
+[submodule "lib/dircolors-solarized"]
+	path = lib/dircolors-solarized
+	url = git@github.com:seebi/dircolors-solarized.git

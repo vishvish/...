@@ -10,13 +10,15 @@ dotfiles:
     files/s3cfg: true
     files/sbtconfig: true
     files/vimrc: true
+    dircolors-solarized/dircolors.ansi-dark: true
     bin: true
     config: true
     gnupg: true
     ssh: true
-    tmux/tmux-powerline: false
-    tmux/tmux-powerlinerc: false
-    tmux/powerline.conf: true
+    tmux/themes: true
+    tmux/tmux-powerline: true
+    tmux/tmux-powerlinerc: true
+    tmux/powerline.conf: false
     tmux/tmux.conf: true
     vim: true
     zsh/oh-my-zsh: true
