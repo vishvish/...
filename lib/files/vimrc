@@ -91,6 +91,8 @@ filetype indent on
 " Strip trailing whitespace from lines on save. Very nice.
 autocmd BufWritePre * :%s/\s\+$//e
 
+autocmd FileType nerdtree setlocal nocursorcolumn
+
 "fun! <SID>StripTrailingWhitespaces()
   "let l = line(".")
   "let c = col(".")
