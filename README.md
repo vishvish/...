@@ -1,18 +1,45 @@
-# DOT.DOT.DOT
+# ...
 
-## manage your dotfiles
+## a simple dotfiles manager...
 
-By default, this comes with ssh and zsh examples, and my tmux configuration, which includes tmux-powerline
+### ...and my own configurations, too
 
-### Installation and execution
+Written for my own use, YMMV.
+
+Basically, I backup your existing dotfiles and symlink files and directories from this store into place.
+
+My `vim`, `tmux` and `zsh` setups are here, too.
+
+### Get Started
+
+#### Prerequisites
+
+* Homebrew
+* Github account + your SSH key added to it
+* XCode and CLI tools
+
+#### Install Homebrew packages
+
+Some handy Homebrew taps. Add them.
+
+* `homebrew/binary`
+* `homebrew/dupes`
+* `homebrew/games`
+* `homebrew/science`
+* `homebrew/versions`
+* `thoughtbot/formulae`
+
+
+And these packages will get you started.
+
+	brew install git git-flow archey fortune python tig vim zsh reattach-to-user-namespace tmux
+
+#### Install ...
 
     git clone git@github.com:vishvish/dotdotdot.git
-    
     cd dotdotdot
-    
     git submodule init
-    
-    git submodule update
+    git submodule update --recursive
 
 You ought to have a look at `etc/config.yml` which is where you decide what gets linked and what doesn't.
 
@@ -29,36 +56,9 @@ The program performs four tasks:
 #### To run
 
     cd dotdotdot
-
     ruby dotdotdot.rb
-
-### Homebrew extras
-
-Install the following taps and packages for full functionality:
-
-Taps
-
-homebrew/binary
-homebrew/dupes
-homebrew/games
-homebrew/science
-homebrew/versions
-thoughtbot/formulae
-
-Packages
-
-git
-git-flow
-archey
-fortune
-python
-tig
-vim
-zsh
-reattach-to-user-namespace
-tmux
 
 ### Changelog
 
-1.0 [09 November 2012] Basic release without much documentation.
-1.1 [09 July 2014] Upgraded powerline for tmux and vim, improved colours, plugins and tools. More documentation.
+* `1.1` Upgraded powerline for tmux and vim, improved colours, plugins and tools. More documentation. *10 July 2014*
+* `1.0` Basic release without much documentation. *09 November 2012*
