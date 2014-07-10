@@ -1,0 +1,34 @@
+[core]
+	editor = vim
+	autocrlf = input
+[commit]
+[user]
+	email = vish.vishvanath@gmail.com
+	name = Vish Vishvanath
+	signingkey = 15B336DC154875BD
+[help]
+	autocorrect = 1
+[color]
+	ui = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[github]
+  user = vishvish
+[gitflow]
+  always-sign = true
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[push]
+	default = current
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential

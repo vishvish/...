@@ -1,0 +1,72 @@
+[submodule "lib/vim/all-bundles/delimitMate"]
+	path = lib/vim/all-bundles/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule "lib/vim/all-bundles/vim-node"]
+	path = lib/vim/all-bundles/vim-node
+	url = git@github.com:moll/vim-node.git
+[submodule "lib/vim/all-bundles/sideways.vim"]
+	path = lib/vim/all-bundles/sideways.vim
+	url = git@github.com:AndrewRadev/sideways.vim.git
+[submodule "lib/vim/all-bundles/vim-surround"]
+	path = lib/vim/all-bundles/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "lib/vim/all-bundles/vim-go"]
+	path = lib/vim/all-bundles/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "lib/vim/all-bundles/vim-endwise"]
+	path = lib/vim/all-bundles/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
+[submodule "lib/vim/all-bundles/vim-scala"]
+	path = lib/vim/all-bundles/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
+[submodule "lib/vim/all-bundles/gyp.vim"]
+	path = lib/vim/all-bundles/gyp.vim
+	url = git@github.com:kelan/gyp.vim.git
+[submodule "lib/vim/all-bundles/neocomplete"]
+	path = lib/vim/all-bundles/neocomplete
+	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "lib/vim/all-bundles/nerdcommenter"]
+	path = lib/vim/all-bundles/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "lib/vim/all-bundles/nerdtree"]
+	path = lib/vim/all-bundles/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "lib/vim/all-bundles/vim-javascript"]
+	path = lib/vim/all-bundles/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "lib/vim/all-bundles/vim-json"]
+	path = lib/vim/all-bundles/vim-json
+	url = git@github.com:elzr/vim-json.git
+[submodule "lib/vim/all-bundles/vim-rails"]
+	path = lib/vim/all-bundles/vim-rails
+	url = git@github.com:tpope/vim-rails.git
+[submodule "lib/vim/all-bundles/vim-ruby"]
+	path = lib/vim/all-bundles/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "lib/vim/all-bundles/vim-rspec"]
+	path = lib/vim/all-bundles/vim-rspec
+	url = git@github.com:thoughtbot/vim-rspec.git
+[submodule "lib/zsh/oh-my-zsh"]
+	path = lib/zsh/oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "lib/zsh/LS_COLORS"]
+	path = lib/zsh/LS_COLORS
+	url = git@github.com:trapd00r/LS_COLORS.git
+[submodule "lib/tmux/tmux-powerline"]
+	path = lib/tmux/tmux-powerline
+	url = git@github.com:erikw/tmux-powerline.git
+[submodule "lib/dircolors-solarized"]
+	path = lib/dircolors-solarized
+	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "lib/vim/all-bundles/vim-tabber"]
+	path = lib/vim/all-bundles/vim-tabber
+	url = git@github.com:fweep/vim-tabber.git
+[submodule "lib/vim/all-bundles/ultisnips"]
+	path = lib/vim/all-bundles/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "lib/vim/all-bundles/vim-multiple-cursors"]
+	path = lib/vim/all-bundles/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
+[submodule "lib/vim/all-bundles/goyo.vim"]
+	path = lib/vim/all-bundles/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git

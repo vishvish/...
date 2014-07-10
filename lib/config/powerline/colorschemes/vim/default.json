@@ -1,0 +1,103 @@
+{
+	"name": "Default color scheme",
+	"groups": {
+		"background":               { "fg": "gray4", "bg": "gray10" }, 
+		"background:divider":       { "fg": "gray2", "bg": "gray1" },
+		"mode":                     { "fg": "white", "bg": "darkgreen" },
+		"visual_range":             { "fg": "brightestorange", "bg": "darkorange" },
+		"modified_indicator":       { "fg": "brightred", "bg": "black" },
+		"paste_indicator":          { "fg": "black", "bg": "red", "attr": ["bold"] },
+		"readonly_indicator":       { "fg": "brightestred", "bg": "gray4" },
+		"branch":                   { "fg": "white", "bg": "darkgreen" },
+		"branch_dirty":             { "fg": "brightyellow", "bg": "gray4" }, 
+		"branch_clean":             { "fg": "gray9", "bg": "gray4" },
+		"branch:divider":           { "fg": "gray7", "bg": "gray1" },
+		"file_directory":           { "fg": "white", "bg": "gray1" },
+		"file_name":                { "fg": "steelblue", "bg": "gray1", "attr": ["bold"] },
+		"window_title":             { "fg": "white", "bg": "gray4" },
+		"file_size":                { "fg": "gray8", "bg": "gray2" },
+		"file_name_no_file":        { "fg": "gray9", "bg": "gray4", "attr": ["bold"] },
+		"file_name_empty":          { "fg": "gray9", "bg": "gray4" },
+		"file_format":              { "fg": "gray10", "bg": "gray1" },
+		"file_encoding":            { "fg": "gray10", "bg": "gray1" },
+		"file_type":                { "fg": "gray10", "bg": "gray1" },
+		"file_vcs_status":          { "fg": "brightestred", "bg": "gray2" },
+		"file_vcs_status_M":        { "fg": "brightyellow", "bg": "gray2" },
+		"file_vcs_status_A":        { "fg": "brightgreen", "bg": "gray2" },
+		"line_percent":             { "fg": "gray9", "bg": "gray4" },
+		"line_percent_gradient":    { "fg": "green_yellow_red", "bg": "gray4" },
+		"position":                 { "fg": "gray9", "bg": "gray4" },
+		"position_gradient":        { "fg": "green_yellow_red", "bg": "gray4" },
+		"line_current":             { "fg": "gray10", "bg": "gray1", "attr": ["bold"] },
+		"line_current_symbol":      { "fg": "gray1", "bg": "gray10" },
+		"virtcol_current":          { "fg": "gray10", "bg": "gray1" },
+		"col_current":              { "fg": "gray6", "bg": "gray10" },
+		"modified_buffers":         { "fg": "brightyellow", "bg": "gray2" },
+		"environment":              { "fg": "gray8", "bg": "gray2" },
+		"error":                    { "fg": "brightestred", "bg": "darkred", "attr": ["bold"] },
+		"warning":                  { "fg": "brightyellow", "bg": "darkorange", "attr": ["bold"] },
+		"current_tag":              { "fg": "gray9", "bg": "gray2" }
+	},
+	"mode_translations": {
+		"nc": {
+			"colors": {
+				"brightyellow": "darkorange",
+				"brightestred": "darkred",
+				"gray0": "gray0",
+				"gray1": "gray0",
+				"gray2": "gray0",
+				"gray3": "gray1",
+				"gray4": "gray1",
+				"gray5": "gray1",
+				"gray6": "gray1",
+				"gray7": "gray4",
+				"gray8": "gray4",
+				"gray9": "gray4",
+				"white": "gray6",
+				"green_yellow_red": "gray5"
+			}
+		},
+		"i": {
+			"colors": {
+        "black": "white",
+				"gray0": "darkestblue",
+				"gray1": "darkestblue",
+				"gray2": "darkestblue",
+				"gray3": "darkblue",
+				"gray4": "darkblue",
+				"gray5": "darkestcyan",
+				"gray6": "darkestcyan",
+				"gray7": "darkestcyan",
+				"gray8": "mediumcyan",
+				"gray9": "mediumcyan",
+				"gray10": "mediumcyan",
+				"green_yellow_red": "gray5"
+			},
+			"groups": {
+				"mode":               { "fg": "darkestcyan", "bg": "white" },
+				"background:divider": { "fg": "darkcyan", "bg": "darkestblue" },
+				"branch:divider":     { "fg": "darkcyan", "bg": "darkblue" }
+			}
+		},
+		"v": {
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange" }
+			}
+		},
+		"V": {
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] }
+			}
+		},
+		"^V": {
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] }
+			}
+		},
+		"R": {
+			"groups": {
+				"mode": { "fg": "white", "bg": "brightred", "attr": ["bold"] }
+			}
+		}
+	}
+}

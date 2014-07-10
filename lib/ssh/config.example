@@ -1,0 +1,38 @@
+# Global Settings
+ForwardAgent yes
+#VisualHostKey yes
+HashKnownHosts no
+#ConnectTimeout 2
+ServerAliveCountMax 6
+ServerAliveInterval 30
+
+# Default
+Host *
+    #User username
+    StrictHostKeyChecking ask
+    ControlMaster auto
+    # ControlPath ~/.ssh/master/%r@%h:%p
+
+# Some sample configs for proxying through SSH hosts.
+
+# The external-facing host.
+Host parentHost
+	HostName parent.example.com
+    User admin
+
+# An internal host, logging in through the parent with a different user and key.
+Host childHost
+	ProxyCommand ssh -q parentHost nc -q0 child.example.com 22
+    User another
+    IdentityFile ~/.ssh/childHost_rsa
+
+# An internal mysql server, again, proxying through the parent but then ready
+# for tunnelling, so that it looks like the remote mysql is running locally.
+# 
+# Start the tunnel with
+# ssh -f -N mysql
+Host mysql
+    ProxyCommand ssh -q parentHost nc -q0 mysql.example.com 22
+    LocalForward 3306 127.0.0.1:3306
+    User mysql
+    IdentityFile ~/.ssh/mysql_rsa

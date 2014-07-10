@@ -1,0 +1,16 @@
+.DS_Store
+*.gpg
+/lib/gnupg/random_seed
+id_rsa*
+/.bundle/
+backups
+vendor/gems
+vendor/extensions
+vendor/specifications
+vendor/build_info
+
+/lib/ssh/authorized_keys
+
+/lib/ssh/known_hosts
+
+environment-*

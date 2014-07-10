@@ -1,0 +1,13 @@
+[core]
+	editor = mate
+	autocrlf = input
+[commit]
+	template = /Users/me/.gitmessage.txt
+[user]
+	email = me@example.com
+	name = Joe Public
+	signingkey = 9CB0E68C08CF84D0
+[help]
+	autocorrect = 1
+[color]
+	ui = true

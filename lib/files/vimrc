@@ -1,0 +1,203 @@
+execute pathogen#infect()
+
+set nocompatible
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Behavior
+" """""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+set autoindent
+set autoread " Set to auto read when a file is changed from the outside
+set backspace=eol,start,indent " sane backspace
+set clipboard=unnamed,unnamedplus " use the system clipboard for yank/put/delete
+set cmdheight=2
+set cursorcolumn " highlight the current line
+set cursorline " highlight the current line
+set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8 " saving and encoding
+set expandtab
+set exrc " enable per-directory .vimrc files
+set ffs=unix,dos,mac
+set guioptions-=L " turn off GUI left scrollbar
+set guioptions-=T " turn off GUI toolbar (icons)
+set guioptions-=r " turn off GUI right scrollbar
+set hidden " don't unload buffer when switching away
+set hlsearch incsearch ignorecase smartcase " search
+set laststatus=2 " always show status bar
+set lazyredraw
+set magic
+set modeline " allow per-file settings via modeline
+set mouse=a " Enable mouse for all modes
+set mousemodel=popup " right-click pops up context menu
+set nobackup nowritebackup noswapfile autoread " no backup or swap
+set nofoldenable " disable folding
+set nomousehide " don't hide the mouse cursor while typing
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set noswapfile
+set number " show absolute line number of the current line
+set printoptions=paper:letter " use letter as the print output format
+set rtp+=$GOROOT/misc/vim  " add Go lang highlighting
+set ruler " show cursor position in status bar
+set scrolloff=10 " scroll the window so we can always see 10 lines around the cursor
+set secure " disable unsafe commands in local .vimrc files
+set shiftwidth=2
+set showcmd
+set showmatch " jump to matching bracket when inserting one
+set smarttab
+set tabstop=2
+set textwidth=80 " show a vertical line at the 79th character
+set ttymouse=xterm2 " Use mouse in iTerm2 for OS X
+set whichwrap+=<,>,h,l,[,] " these keys move cursor to the next/previous line
+set wildmenu " completion
+set winaltkeys=no " turn off alt shortcuts
+
+" turn on syntax highlighting
+syntax on
+set background=dark
+set t_Co=256
+
+" Use the first available colorscheme in this list
+for scheme in [ 'hobbes', 'koehler', 'desert' ]
+  try
+    execute 'colorscheme '.scheme
+    break
+  catch
+    continue
+  endtry
+endfor
+
+" override the theme for the ColorColumn
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
+
+" highlight the 80th column
+"
+" In Vim >= 7.3, also highlight columns 120+
+if exists('+colorcolumn')
+  " (I picked 120-320 because you have to provide an upper bound and 500 seems
+  " to be enough.)
+  let &colorcolumn="80,".join(range(120,500),",")
+else
+  " fallback for Vim < v7.3
+  autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" Formatting
+filetype plugin on
+filetype indent on
+
+" Strip trailing whitespace from lines on save. Very nice.
+autocmd BufWritePre * :%s/\s\+$//e
+
+autocmd FileType nerdtree setlocal nocursorcolumn
+
+"fun! <SID>StripTrailingWhitespaces()
+  "let l = line(".")
+  "let c = col(".")
+  "%s/\s\+$//e
+  "call cursor(l, c)
+"endfun
+"autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" while we're dealing with Filetypes...
+au FileType javascript set dictionary+=$HOME/.vim/dict/vim-node.dict
+au BufNewFile,BufRead *.fbp set filetype=coffee
+au BufNewFile,BufRead powerline.conf set filetype=tmux
+au BufNewFile,BufRead *.proxy set filetype=ruby
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Map Goyo toggle to <Leader> + spacebar
+nnoremap <Leader><Space> :Goyo<CR>
+
+" shortcut to execute ruby in current buffer
+map <leader>r :!ruby %<cr>
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" stop vim-json hiding quotes
+let g:vim_json_syntax_conceal = 0
+
+" Essential Bundle initialization hooks
+let g:neocomplete#enable_at_startup = 1
+
+
+" Remap some keys for the Bundles
+nnoremap <F1> :NERDTreeToggle<cr>
+"nnoremap <F2> :UndotreeToggle<cr>
+
+" Re-idents entire file
+nnoremap <F7> mzgg=G`z
+
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
+nnoremap <c-n> :SidewaysJumpLeft<cr>
+nnoremap <c-m> :SidewaysJumpRight<cr>
+
+" ColorStepper Keys
+"nmap <F5> <Plug>ColorstepPrev
+"nmap <F6> <Plug>ColorstepNext
+"nmap <S-F6> <Plug>ColorstepReload
+
+":nmap \l :setlocal number!
+:nmap <F4> :set paste!<cr>
+
+" Reload ~/.vimrc
+noremap \rc :source ~/.vimrc<cr>
+
+":nmap j gj
+":nmap k gk
+
+" Fat-fingers, halp, halp!
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+:command QA qa
+:command Qa qa
+
+":set incsearch
+":set ignorecase
+":set smartcase
+":set hlsearch
+":nmap \q :nohlsearch
+
+:nmap <C-e> :e#
+:nmap <C-n> :bnext<cr>
+:nmap <C-p> :bprev<cr>
+":nnoremap <F5> :buffers<CR>:buffer<Space>
+
+:set wildignore+=*.o,*.obj,.git,vendor/**
+
+" Some shortcuts
+
+"iab #i #include (typing "#i" and space will be expanded to "#include")
+"iab #d #define (typing "#d" and space will be expanded to "#define")
+"iab s struct (typing "s" and space will be expanded to "struct")
+"iab t typedef ( typing "t" and space will be expanded to "typedef")
+iab bdp binding.pry
+iab cll console.log(
+
+source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+
+
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
+
+set tabline=%!tabber#TabLine()
+
