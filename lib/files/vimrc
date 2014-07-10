@@ -187,7 +187,7 @@ noremap \rc :source ~/.vimrc<cr>
 iab bdp binding.pry
 iab cll console.log(
 
-source /Users/vish/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 
 if ! has('gui_running')
