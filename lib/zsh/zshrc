@@ -4,7 +4,7 @@ EXTRAS=$HOME/.zsh_extras
 ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 
-plugins=(brew bundler colorize docker gem gpg-agent rails tmux ssh-agent last-working-dir gitfast git-flow git-extras git-prompt go osx common-aliases autojump dircycle dirhistory )
+plugins=(brew bundler colorize docker gem gpg-agent rails tmux ssh-agent git-extras git-prompt go osx common-aliases autojump dircycle dirhistory colored-man)
 
 source $EXTRAS/1-aliases.sh
 source $EXTRAS/2-exports.sh
