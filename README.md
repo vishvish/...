@@ -98,6 +98,6 @@ The program performs four tasks:
 
 ### Changelog
 
-  `1.1p1` Nothing major, added syntax highlighting in zsh, added screenshots and improved docs.
+* `1.1p1` Nothing major, added syntax highlighting in zsh, added screenshots and improved docs. *11 July 2014*
 * `1.1` Upgraded powerline for tmux and vim, improved colours, plugins and tools. More documentation. *10 July 2014*
 * `1.0` Basic release without much documentation. *09 November 2012*
