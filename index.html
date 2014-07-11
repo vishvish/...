@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>... by vishvish</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>...</h1>
+        <p>DotDotDot - manage your dotfiles (and check out mine)</p>
+        <p class="view"><a href="https://github.com/vishvish/...">View the Project on GitHub <small>vishvish/...</small></a></p>
+        <ul>
+          <li><a href="https://github.com/vishvish/.../zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/vishvish/.../tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/vishvish/...">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="" class="anchor" href="#"><span class="octicon octicon-link"></span></a>...</h1>
+
+<h2>
+<a name="a-simple-dotfiles-manager" class="anchor" href="#a-simple-dotfiles-manager"><span class="octicon octicon-link"></span></a>a simple dotfiles manager...</h2>
+
+<h3>
+<a name="and-my-own-configurations-too" class="anchor" href="#and-my-own-configurations-too"><span class="octicon octicon-link"></span></a>...and my own configurations, too</h3>
+
+<p>Written for my own use, YMMV.</p>
+
+<p>Basically, I backup your existing dotfiles and symlink files and directories from this store into place.</p>
+
+<p>My <code>vim</code>, <code>tmux</code> and <code>zsh</code> setups are here, too.</p>
+
+<h3>
+<a name="get-started" class="anchor" href="#get-started"><span class="octicon octicon-link"></span></a>Get Started</h3>
+
+<h4>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h4>
+
+<ul>
+<li>Homebrew</li>
+<li>Github account + your SSH key added to it</li>
+<li>XCode and CLI tools</li>
+</ul><h4>
+<a name="install-homebrew-packages" class="anchor" href="#install-homebrew-packages"><span class="octicon octicon-link"></span></a>Install Homebrew packages</h4>
+
+<p>Some handy Homebrew taps. Add them.</p>
+
+<ul>
+<li><code>homebrew/binary</code></li>
+<li><code>homebrew/dupes</code></li>
+<li><code>homebrew/games</code></li>
+<li><code>homebrew/science</code></li>
+<li><code>homebrew/versions</code></li>
+<li><code>thoughtbot/formulae</code></li>
+</ul><p>And these packages will get you started.</p>
+
+<pre><code>brew install git git-flow archey fortune python tig vim zsh reattach-to-user-namespace tmux
+</code></pre>
+
+<h4>
+<a name="install-" class="anchor" href="#install-"><span class="octicon octicon-link"></span></a>Install ...</h4>
+
+<pre><code>git clone git@github.com:vishvish/dotdotdot.git
+cd dotdotdot
+git submodule init
+git submodule update --recursive
+</code></pre>
+
+<p>You ought to have a look at <code>etc/config.yml</code> which is where you decide what gets linked and what doesn't.</p>
+
+<p>The program performs four tasks:</p>
+
+<ol>
+<li><p>backs up all the files named in <code>config.yml</code>, whether they're symlinks or not as a gzipped tar file into its <code>backups</code> directory.</p></li>
+<li><p>removes all the files specified in the config.</p></li>
+<li><p>symlinks all the active files/directories specified in the config.</p></li>
+<li><p>cleans up the backups directory. Number of backups kept are specified at the top of the config. Default is 5.</p></li>
+</ol><h4>
+<a name="to-run" class="anchor" href="#to-run"><span class="octicon octicon-link"></span></a>To run</h4>
+
+<pre><code>cd dotdotdot
+ruby dotdotdot.rb
+</code></pre>
+
+<h3>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h3>
+
+<ul>
+<li>
+<code>1.1</code> Upgraded powerline for tmux and vim, improved colours, plugins and tools. More documentation. <em>10 July 2014</em>
+</li>
+<li>
+<code>1.0</code> Basic release without much documentation. <em>09 November 2012</em>
+</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/vishvish">vishvish</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
