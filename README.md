@@ -6,11 +6,49 @@
 
 Written for my own use, YMMV.
 
-Basically, I backup your existing dotfiles and symlink files and directories from this store into place.
+Basically, I backup your existing dotfiles and symlink files and directories from this store into place. I'm not suggesting this is fantastic code, but the really interesting stuff is inside the configuration files.
 
 My `vim`, `tmux` and `zsh` setups are here, too.
 
-### Get Started
+### Screenshots
+
+##### Colourful Man Pages!
+
+![image](https://raw.githubusercontent.com/vishvish/.../develop/screenshots/colourful-man.gif)
+
+Now, isn't that easier to scan?
+
+---
+##### Awesome Git Log!
+
+![image](https://raw.githubusercontent.com/vishvish/.../develop/screenshots/gll.gif)
+
+---
+
+##### Syntax Highlighting as you Type!
+
+![image](https://raw.githubusercontent.com/vishvish/.../develop/screenshots/syntax-highlighting.gif)
+
+See the first command `anon-existent command` is in red. Doesn't exist, so you can spot that way before you finish typing, let alone pressing enter.
+
+The second partial command `gzi` in yellow because it's still possible for a command to start that way (gzip). So keep typing.
+
+And `brew` is green because it's a command.
+
+---
+
+##### Tmux and Vim
+
+![image](https://raw.githubusercontent.com/vishvish/.../develop/screenshots/tmux-vim.png)
+
+iTerm2 full screen with my custom Vim scheme and Tmux visible as a status bar at the bottom.
+
+---
+
+
+### Still Interested? Get Started.
+
+Or just rifle through the configurations and take whatever you want.
 
 #### Prerequisites
 
@@ -60,5 +98,6 @@ The program performs four tasks:
 
 ### Changelog
 
+  `1.1p1` Nothing major, added syntax highlighting in zsh, added screenshots and improved docs.
 * `1.1` Upgraded powerline for tmux and vim, improved colours, plugins and tools. More documentation. *10 July 2014*
 * `1.0` Basic release without much documentation. *09 November 2012*
