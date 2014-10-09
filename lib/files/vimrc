@@ -6,15 +6,12 @@ set nocompatible
 " Vim Behavior
 " """""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-
-
 set autoindent
 set autoread " Set to auto read when a file is changed from the outside
 set backspace=eol,start,indent " sane backspace
 set clipboard=unnamed,unnamedplus " use the system clipboard for yank/put/delete
 set cmdheight=2
-set cursorcolumn " highlight the current line
+"set cursorcolumn " highlight the current line
 set cursorline " highlight the current line
 set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8 " saving and encoding
 set expandtab
@@ -37,21 +34,30 @@ set nomousehide " don't hide the mouse cursor while typing
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noswapfile
 set number " show absolute line number of the current line
-set printoptions=paper:letter " use letter as the print output format
+"set printoptions=paper:letter " use letter as the print output format
 set rtp+=$GOROOT/misc/vim  " add Go lang highlighting
 set ruler " show cursor position in status bar
-set scrolloff=10 " scroll the window so we can always see 10 lines around the cursor
+"set scrolloff=10 " scroll the window so we can always see 10 lines around the cursor
 set secure " disable unsafe commands in local .vimrc files
 set shiftwidth=2
 set showcmd
 set showmatch " jump to matching bracket when inserting one
+set smartindent
 set smarttab
+set tabline=%!tabber#TabLine()
 set tabstop=2
-set textwidth=80 " show a vertical line at the 79th character
+set textwidth=120 " show a vertical line at the 79th character
 set ttymouse=xterm2 " Use mouse in iTerm2 for OS X
 set whichwrap+=<,>,h,l,[,] " these keys move cursor to the next/previous line
+set wildignore+=*.o,*.obj,.git,vendor/**
 set wildmenu " completion
-set winaltkeys=no " turn off alt shortcuts
+set winaltkeys=no " turn off alt shortcuts:qa
+
+" ==== Colours ====
+
+" Disable Background Color Erase (BCE) so that color scheme work
+" " properly when Vim is used inside tmux and GNU screen.
+set t_ut=
 
 " turn on syntax highlighting
 syntax on
@@ -59,7 +65,7 @@ set background=dark
 set t_Co=256
 
 " Use the first available colorscheme in this list
-for scheme in [ 'hobbes', 'koehler', 'desert' ]
+for scheme in [ 'base16-default', 'hobbes', 'koehler', 'desert' ]
   try
     execute 'colorscheme '.scheme
     break
@@ -69,20 +75,20 @@ for scheme in [ 'hobbes', 'koehler', 'desert' ]
 endfor
 
 " override the theme for the ColorColumn
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+"highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " highlight the 80th column
 "
 " In Vim >= 7.3, also highlight columns 120+
-if exists('+colorcolumn')
-  " (I picked 120-320 because you have to provide an upper bound and 500 seems
-  " to be enough.)
-  let &colorcolumn="80,".join(range(120,500),",")
-else
-  " fallback for Vim < v7.3
-  autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+"if exists('+colorcolumn')
+"" (I picked 120-320 because you have to provide an upper bound and 500 seems
+"" to be enough.)
+"let &colorcolumn="80,".join(range(120,500),",")
+"else
+"" fallback for Vim < v7.3
+"autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+"endif
 
 " Formatting
 filetype plugin on
@@ -94,10 +100,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd FileType nerdtree setlocal nocursorcolumn
 
 "fun! <SID>StripTrailingWhitespaces()
-  "let l = line(".")
-  "let c = col(".")
-  "%s/\s\+$//e
-  "call cursor(l, c)
+"let l = line(".")
+"let c = col(".")
+"%s/\s\+$//e
+"call cursor(l, c)
 "endfun
 "autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
@@ -129,7 +135,25 @@ let g:vim_json_syntax_conceal = 0
 
 " Essential Bundle initialization hooks
 let g:neocomplete#enable_at_startup = 1
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
+let g:used_javascript_libs = 'angular'
 
 " Remap some keys for the Bundles
 nnoremap <F1> :NERDTreeToggle<cr>
@@ -138,10 +162,10 @@ nnoremap <F1> :NERDTreeToggle<cr>
 " Re-idents entire file
 nnoremap <F7> mzgg=G`z
 
-nnoremap <c-h> :SidewaysLeft<cr>
-nnoremap <c-l> :SidewaysRight<cr>
-nnoremap <c-n> :SidewaysJumpLeft<cr>
-nnoremap <c-m> :SidewaysJumpRight<cr>
+"nnoremap <c-h> :SidewaysLeft<cr>
+"nnoremap <c-l> :SidewaysRight<cr>
+"nnoremap <c-n> :SidewaysJumpLeft<cr>
+"nnoremap <c-m> :SidewaysJumpRight<cr>
 
 " ColorStepper Keys
 "nmap <F5> <Plug>ColorstepPrev
@@ -154,9 +178,6 @@ nnoremap <c-m> :SidewaysJumpRight<cr>
 " Reload ~/.vimrc
 noremap \rc :source ~/.vimrc<cr>
 
-":nmap j gj
-":nmap k gk
-
 " Fat-fingers, halp, halp!
 :command WQ wq
 :command Wq wq
@@ -165,30 +186,28 @@ noremap \rc :source ~/.vimrc<cr>
 :command QA qa
 :command Qa qa
 
-":set incsearch
-":set ignorecase
-":set smartcase
-":set hlsearch
-":nmap \q :nohlsearch
-
 :nmap <C-e> :e#
 :nmap <C-n> :bnext<cr>
 :nmap <C-p> :bprev<cr>
-":nnoremap <F5> :buffers<CR>:buffer<Space>
-
-:set wildignore+=*.o,*.obj,.git,vendor/**
+:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Some shortcuts
-
-"iab #i #include (typing "#i" and space will be expanded to "#include")
-"iab #d #define (typing "#d" and space will be expanded to "#define")
-"iab s struct (typing "s" and space will be expanded to "struct")
-"iab t typedef ( typing "t" and space will be expanded to "typedef")
 iab bdp binding.pry
 iab cll console.log(
 
-source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+" Multi cursor setup
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-x>'
+let g:multi_cursor_prev_key='<C-z>'
+let g:multi_cursor_skip_key='<C-c>'
+let g:multi_cursor_quit_key='<Esc>'
 
+" And finally...
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 if ! has('gui_running')
   set ttimeoutlen=10
@@ -198,6 +217,4 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
-
-set tabline=%!tabber#TabLine()
 
