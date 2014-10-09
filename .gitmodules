@@ -73,3 +73,18 @@
 [submodule "lib/vim/all-bundles/vim-coffee-script"]
 	path = lib/vim/all-bundles/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule "lib/vim/all-bundles/vim-angular"]
+	path = lib/vim/all-bundles/vim-angular
+	url = git@github.com:burnettk/vim-angular.git
+[submodule "lib/vim/all-bundles/javascript-libraries-syntax.vim"]
+	path = lib/vim/all-bundles/javascript-libraries-syntax.vim
+	url = git@github.com:othree/javascript-libraries-syntax.vim.git
+[submodule "lib/tmux/plugins/tpm"]
+	path = lib/tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git
+[submodule "lib/vim/all-bundles/command-t"]
+	path = lib/vim/all-bundles/command-t
+	url = git@github.com:wincent/command-t.git
+[submodule "lib/vim/all-bundles/base16-vim"]
+	path = lib/vim/all-bundles/base16-vim
+	url = git@github.com:chriskempson/base16-vim.git
