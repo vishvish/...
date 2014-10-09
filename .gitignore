@@ -8,11 +8,10 @@ vendor/gems
 vendor/extensions
 vendor/specifications
 vendor/build_info
-
 /lib/ssh/authorized_keys
-
 /lib/ssh/known_hosts
-
 environment-*
 lib/ssh/config
 s3cfg
+lib/ssh/noths_rsa
+lib/ssh/noths_rsa.pub
