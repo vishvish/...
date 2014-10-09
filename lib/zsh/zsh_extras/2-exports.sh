@@ -2,23 +2,33 @@
 export TERM="xterm-256color"
 export PATH=/usr/local/bin:~/git/homebrew/bin:~/git/homebrew/sbin:~/git/homebrew/share/npm/bin:$PATH
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export TMPDIR=${HOME}/git/tmp
 
 # Use Clang as default compiler
 export CC=clang
-export CFLAGS=-Qunused arguments
-export CPPFLAGS=-Qunused-arguments
+#export CFLAGS=-Qunused arguments
+#export CPPFLAGS=-Qunused-arguments
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${HOMEBREW_PREFIX}/lib
 
-# hack to shut homebrew up
-export PATH=~/git/homebrew/bin:$PATH
+# Begin Homebrew
+
+# export HOMEBREW_TEMP=/${HOME}/git/tmp
+export HOMEBREW_PREFIX=~/git/homebrew
 
 # If stupid enough to ever use Boxen again, stop Boxen installing broken builds
 # on my machine
 export HOMEBREW_BUILD_FROM_SOURCE=1
 export RUBY_BUILD_SKIP_MIRROR=1
 
+# hack to shut homebrew up
+export PATH=~/git/homebrew/bin:$PATH
+
 # To use Homebrew's directories rather than ~/.rbenv
 # export RBENV_ROOT=/Users/vish/git/homebrew/var/rbenv
-export TMPDIR=${HOME}/git/tmp
+
+# Fix compiler library for homebrew
+export LDFLAGS="$LDFLAGS -L$HOMEBREW_PREFIX/lib -L/Users/vish/git/homebrew/opt/libxml2/lib -L/Users/vish/git/homebrew/opt/libxslt/lib"
+export CPPFLAGS="-I/Users/vish/git/homebrew/opt/libxml2/include -I/Users/vish/git/homebrew/opt/libxslt/include"
 
 #Add texlive
 export PATH=/usr/local/texlive/2012/bin/x86_64-darwin:${PATH}
@@ -30,7 +40,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export PATH=$PATH:~/Applications/IDE/dart/dart-sdk/bin
 
 # Add Amazon EB tools
-export PATH=$PATH:/Users/vish/git/utils/AWS-ElasticBeanstalk-CLI-2.3.1/eb/macosx/python2.7
+# export PATH=$PATH:/Users/vish/git/utils/AWS-ElasticBeanstalk-CLI-2.3.1/eb/macosx/python2.7
 
 # Add Vertx
 #export PATH=$PATH:/Users/vish/git/external/vert.x-1.3.1.final/bin
@@ -40,8 +50,6 @@ export PATH=$PATH:/Users/vish/git/utils/AWS-ElasticBeanstalk-CLI-2.3.1/eb/macosx
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512M"
 
-# export HOMEBREW_TEMP=/${HOME}/git/tmp
-export HOMEBREW_PREFIX=~/git/homebrew
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -58,19 +66,12 @@ export PATH=$GOPATH/bin:${PATH}
 
 # Home bin folder
 export PATH=$PATH:~/.bin
-#export PATH=$PATH:~/bin
-
-# Add Play Framework
-# export PATH=$PATH:~/git/external/play
 
 # Add Google depot tools
 # export PATH=$PATH:Z/git/external/depot_tools
 
-# Fix compiler library for homebrew
-export LDFLAGS="$LDFLAGS -L$HOMEBREW_ROOT/lib"
-
 # Setup HAXE
-export HAXE_LIBRARY_PATH=/usr/lib/haxe/std/:/usr/lib/haxe/lib/
+export HAXE_STD_PATH="/Users/vish/git/homebrew/lib/haxe/std"
 
 # Add Python bin
 export PATH=${HOME}/Library/Python/2.7/bin:${PATH}
@@ -86,20 +87,17 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
 
 # Maven
-# export M2_HOME=${HOME}/git/homebrew/Cellar/maven/3.1.1/libexec
-# export PATH=$PATH:$M2_HOME/bin
+export M2_HOME=${HOME}/git/homebrew/Cellar/maven/3.2.1/libexec
+export PATH=$PATH:$M2_HOME/bin
 
 # Postgres.app
-PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+# PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
 # prevent NVM losing installs on upgrade
 export NVM_DIR=~/.nvm
 
 # Teamcity options
 export TEAMCITY_SERVER_MEM_OPTS="-Xmx750m -XX:MaxPermSize=270m -XX:MaxPermSize=64m"
-
-# Docker options
-export DOCKER_HOST=localhost
 
 # GNU coreutils
 PATH="/Users/vish/git/homebrew/opt/coreutils/libexec/gnubin:$PATH"
