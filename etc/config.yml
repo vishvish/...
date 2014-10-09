@@ -27,3 +27,4 @@ dotfiles:
     zsh/zshrc: true
     zsh/zsh_extras: true
     zsh/LS_COLORS: true
+    emacs.d: true

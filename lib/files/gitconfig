@@ -1,6 +1,7 @@
 [core]
 	editor = vim
 	autocrlf = input
+	excludesfile = /Users/vish/.gitignore_global
 [commit]
 [user]
 	email = vish.vishvanath@gmail.com
@@ -32,3 +33,6 @@ protocol = https
 
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
