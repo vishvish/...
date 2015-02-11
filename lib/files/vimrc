@@ -114,21 +114,28 @@ au BufNewFile,BufRead powerline.conf set filetype=tmux
 au BufNewFile,BufRead *.proxy set filetype=ruby
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 
 " Map Goyo toggle to <Leader> + spacebar
 nnoremap <Leader><Space> :Goyo<CR>
 
 " shortcut to execute ruby in current buffer
-map <leader>r :!ruby %<cr>
+"map <leader>r :!ruby %<cr>
+
+" RSpec.vim mappings
+map <Leader>r :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " stop vim-json hiding quotes
 let g:vim_json_syntax_conceal = 0
@@ -153,11 +160,11 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
-let g:used_javascript_libs = 'angular'
+"let g:used_javascript_libs = 'angular'
 
 " Remap some keys for the Bundles
 nnoremap <F1> :NERDTreeToggle<cr>
-"nnoremap <F2> :UndotreeToggle<cr>
+nnoremap <F2> :NERDTreeFind<cr>
 
 " Re-idents entire file
 nnoremap <F7> mzgg=G`z
@@ -186,21 +193,21 @@ noremap \rc :source ~/.vimrc<cr>
 :command QA qa
 :command Qa qa
 
-:nmap <C-e> :e#
-:nmap <C-n> :bnext<cr>
-:nmap <C-p> :bprev<cr>
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+":nmap <C-e> :e#
+":nmap <C-n> :bnext<cr>
+":nmap <C-p> :bprev<cr>
+":nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Some shortcuts
 iab bdp binding.pry
 iab cll console.log(
 
 " Multi cursor setup
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-x>'
-let g:multi_cursor_prev_key='<C-z>'
-let g:multi_cursor_skip_key='<C-c>'
-let g:multi_cursor_quit_key='<Esc>'
+"let g:multi_cursor_use_default_mapping=0
+"let g:multi_cursor_next_key='<C-x>'
+"let g:multi_cursor_prev_key='<C-z>'
+"let g:multi_cursor_skip_key='<C-c>'
+"let g:multi_cursor_quit_key='<Esc>'
 
 " And finally...
 
